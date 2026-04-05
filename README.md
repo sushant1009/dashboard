@@ -25,7 +25,7 @@ Built using **Spring Boot**, this project demonstrates:
 
 * JWT-based Authentication & Authorization
 * Role-Based Access (ADMIN, ANALYST, VIEWER)
-* Transaction Management (Create, Read, Filter)
+* Transaction Management (Create, Update, Delete, Read, Filter)
 * Dashboard Insights (Summary & Category Analysis)
 * Rate Limiting (10 requests/min per user)
 *  Global Exception Handling
@@ -102,13 +102,30 @@ HTTP 429 - Too Many Requests
 
 ###  User APIs (ADMIN Only)
 
-| Method | Endpoint                                  | Description                                         |
-|--------|-------------------------------------------|-----------------------------------------------------|
-| GET    | /users                                    | Get all users                                       |
-| GET    | /users/{id}                               | Get user by ID                                      |
-| PUT    | /change-role/{id}?status=<***role***>     | Change the role(ACTIVE, INACTIVE) of a user         |
-| PUT    | /change-status/{id}?status=<***status***> | Change the status(ADMIN, ANALYST, VIEWER) of a user |
+| Method | Endpoint       | Description                                         |
+|--------|----------------|-----------------------------------------------------|
+| GET    | /users         | Get all users                                       |
+| GET    | /users/{id}    | Get user by ID                                      |
+| PUT    | /change-role   | Change the role(ACTIVE, INACTIVE) of a user         |
+| PUT    | /change-status | Change the status(ADMIN, ANALYST, VIEWER) of a user |
 
+##### Request Body(role)
+```
+{
+  "userId": 1,
+  "role": "ADMIN"
+}
+```
+
+---
+
+##### Request Body(status)
+```
+{
+  "userId": 1,
+  "status": "Active"
+}
+```
 
 ---
 
