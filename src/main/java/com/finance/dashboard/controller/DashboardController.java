@@ -59,7 +59,7 @@
         //User specific transactions summary(Admin + Analyst)
         @PreAuthorize("hasAnyRole('ADMIN','ANALYST')")
         @GetMapping("/summary/{userId}")
-        public DashboardSummaryDTO getSummary(@RequestParam(required = false) LocalDate start,
+        public DashboardSummaryDTO getSummaryForUserWithFilter(@RequestParam(required = false) LocalDate start,
                                               @RequestParam(required = false) LocalDate end,
                                               @PathVariable Long userId) {
             if (start != null && end != null && start.isAfter(end)) {
@@ -99,7 +99,7 @@
         // User Specific category summary(Admin + Analyst)
         @PreAuthorize("hasAnyRole('ADMIN','ANALYST')")
         @GetMapping("/category/{userId}")
-        public Map<String, Double> categorySummary(@RequestParam(required = false) TransactionType type,
+        public Map<String, Double> categorySummaryForUserWithFilter(@RequestParam(required = false) TransactionType type,
                                                    @RequestParam(required = false) String category,
                                                    @RequestParam(required = false) LocalDate start,
                                                    @RequestParam(required = false) LocalDate end,

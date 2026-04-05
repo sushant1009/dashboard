@@ -23,7 +23,7 @@ public class TransactionController {
     //Create Transactions
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/admin/create")
-    public TransactionDTO create(@Valid @RequestBody CreateTransactionRequest request) {
+    public TransactionDTO createTransaction(@Valid @RequestBody CreateTransactionRequest request) {
         return transactionService.createTransaction(request);
     }
 
@@ -46,14 +46,14 @@ public class TransactionController {
     //Delete transactions
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/admin/{id}")
-    public void delete(@PathVariable Long id) {
+    public void deleteTransaction(@PathVariable Long id) {
         transactionService.deleteTransaction(id);
     }
 
     //Update transactions
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/admin/{id}")
-    public TransactionDTO update(@PathVariable Long id,
+    public TransactionDTO updateTransaction(@PathVariable Long id,
                                  @RequestBody CreateTransactionRequest request) {
         return transactionService.updateTransaction(id, request);
 
