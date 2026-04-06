@@ -95,8 +95,27 @@ HTTP 429 - Too Many Requests
 
 | Method | Endpoint       | Description              |
 | ------ | -------------- | ------------------------ |
-| POST   | /auth/register | Register a new user      |
+| POST   | /auth/signup | Register a new user      |
 | POST   | /auth/login    | Authenticate and get JWT |
+
+#### Request Body - Signup
+```
+{
+  "name": "Analyst User",
+  "email": "analyst@gmail.com",
+  "password":1234 ,
+  "role": "ANALYST",
+  "status":"ACTIVE"
+}
+```
+
+#### Request Body - Login
+```
+{
+  "email": "analyst@gmail.com",
+  "password": "1234"
+}
+```
 
 ---
 
