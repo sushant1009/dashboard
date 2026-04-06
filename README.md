@@ -139,7 +139,18 @@ HTTP 429 - Too Many Requests
 | PUT    | /transactions/admin/{id}      | Update a transaction |
 | DELETE | /transactions/admin/{id}      | Delete a transaction |
 
+#### Create transaction Request Body 
 
+```
+{
+  "amount": 40000,
+  "type": "INCOME",
+  "category": "Salary",
+  "date": "2026-04-01",
+  "note": "User2 salary",
+  "userId": 2
+}
+```
 
 
 #### Query Parameters(Filter):
