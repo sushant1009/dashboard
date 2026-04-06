@@ -176,7 +176,9 @@ GET /dashboard/category?type=EXPENSE&start=2026-07-01&end=2026-07-30
 
 #### Category Summary (Admin - Specific User)
 
+```
 GET /dashboard/category/{userId}
+```
 
 ---
 
@@ -237,7 +239,9 @@ spring.datasource.password=your_password
 
 ### 3 Run Application
 
+```
 mvn spring-boot:run
+```
 
 ---
 
